@@ -1,42 +1,41 @@
 def setup():
-    size(400,600)
-    stroke(255,0,0)
+    size(700,700)
+    stroke(256,0,0)
+    global wysokosc
+    wysokosc = 0
     strokeWeight(2)
-    fill(0,0,255) #cyli wypełnienie
+    fill(0,0,255)
     global natezenie
     natezenie = 0
     global natezenie
-    global index
-    index = 0
-    frameRate(5)
     global szerokosc
-    szerokosc = 0
+    szerokosc = 335
+    global szybkoscw
+    global szybkoscs
+    szybkoscw = 6
+    szybkoscs = 6
 
 def draw():
     global natezenie
     natezenie = natezenie + 1
     if natezenie==250:
         natezenie==0
-    line(mouseX,mouseY,width/3, height/3)
-    fill(0,0,natezenie,120)
-    rect(20,40,120,140)
-    fill(0,natezenie,0,120)
+    global wysokosc
     global szerokosc
-    szerokosc+=1
-    rect(szerokosc,100,100,100)
-    slownik = {"czerwony":(255,0,0),"niebieski":(0,0,255),"zielony":(0,255,0)}
-    print(slownik["zielony"])
-    stroke(*slownik["zielony"])
-    lista = []
-    global index
-    for nazwa, wartosci in slownik.items():
-        lista.append(wartosci)
-    index += 1
-    if index==3:
-       index = 0
-    stroke(*lista[index])
+    global szybkoscw
+    global szybkoscs
+    
+    szerokosc = szerokosc + szybkoscs
+    if(szerokosc> width or szerokosc <0):
+        szybkoscs = szybkoscs*-1
+        
+    wysokosc = wysokosc + szybkoscw
+    if(wysokosc > height or wysokosc <0):
+        szybkoscw= szybkoscw*-1
+    
+    fill(0,0,natezenie,120)
+    rect(szerokosc ,wysokosc,30,30)
+    
     
 def mousePressed():
     exit()
-
-    
