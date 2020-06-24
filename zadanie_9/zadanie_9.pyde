@@ -17,9 +17,7 @@ def setup():
     print(type(ramka2))
 
 def draw():
-    global zdjecie
-    global ramka
-    global ramka2
+    global zdjecie, ramka, ramka2 # można też jednolinijkowo
 
 
 
@@ -28,11 +26,12 @@ def draw():
     except:
         fill(128,0,128)
         text ("Pies jest na spacerze" ,100,200)
-        image(ramka,0,0, height , width)
+        image(ramka,0,0, height , width) # tu też móże brakować grafiki, lepiej byłoby ją narysować
     else:
-        image(ramka2,0,0, height, width)
+        image(ramka2,0,0, height, width) # tu też może brakować grafiki, lepiej byłoby ją narysować
 
 def mouseClicked():
     exit()
-        
+
+# 1,5pkt
     
