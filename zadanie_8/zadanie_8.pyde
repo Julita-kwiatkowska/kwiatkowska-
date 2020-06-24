@@ -59,7 +59,7 @@ def setup():
     books = ["Naocznosc", "Sens Sztuki", "Harry Potter","Hobbit"]
     library = Library(books)
     Madzia = Customer()
-    library = Library(books)
+    # nie ma potrzeby nadpisywać zmienną tą samą wartością; w programowaniu o to chodzi by nie powtarzać, a napisać uniwersalnie i zautomatyzować w ten sposób akcje które się da
     Julita = Customer()
     
 def draw():
@@ -77,3 +77,5 @@ def mouseClicked():
             library.lendBook(Madzia.requestBook("Naocznosc"))
         if mouseY >40 and mouseY <60:
             library.addBook(Madzia.returnBook())
+            
+#0,25/0,5pkt za tą część, gdzie rozpisaei planu klas dla bankomatu?
