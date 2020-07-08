@@ -30,13 +30,10 @@ class MouseDeer(Pet): # ;D
     def speak(self):
         text('kra', random(50, width-20), random(60, height-40))
         return 'kra'
-    def gimmePaw(self):
-        image(loadImage("kruk.png"), random(50, width-70), random(50, height-100))
+    def gimmeMouth(self):
+        image(loadImage("kruk.png"), random(50, width-70), random(50, height-100)) # brakuje tego obrazka w repozytorium, stąd obecny błąd
     def __sub__(self, other):
         return self.name[0]+ ' i ' + other.name[0]
-    
-    def __sub__(self,other):
-        return self.name[0]+'i'+other.name[0]
         
         
 def setup():
@@ -61,3 +58,7 @@ def mouseClicked():
         pet.speak() # dla różnych typów (Cat, Dog) klas wywołujemy to samo polecenie jedną linijką - to właśnie przejaw polimorfizmu
         if isinstance(pet, Dog): # te które są charakterystyczne dla danego typu obiektu, musimy ująć w warunek, bo na niewłaściwym typie wywaliłoby błąd
             pet.gimmePaw()
+        if isinstance(pet, MouseDeer): #jeżeli obiekt jest instancją myszojelenia, to wejdzie w ten warunek
+            pet.gimmeMouth() # i wykona tą charakterystyczną dla niego i tylko w nim występującą metodę
+            
+#1,5pkt
