@@ -78,4 +78,4 @@ def mouseClicked():
         if mouseY >40 and mouseY <60:
             library.addBook(Madzia.returnBook())
             
-#0,25/0,5pkt za tą część, gdzie rozpisaei planu klas dla bankomatu?
+#0,25/0,5pkt za tą część, gdzie rozpisanie planu klas dla bankomatu?

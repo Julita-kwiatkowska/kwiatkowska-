@@ -92,7 +92,7 @@ class Test(unittest.TestCase):
         library.addBook(Julek.returnBook())
         self.assertEqual(False, Julek.haveBook) 
     
-    def test_na_spacje(self):
+    def test_na_spacje(self): # to testuje pythona, a nie napisane klasy
         s = 'sens sztuki'
         self.assertEqual(s.split(), ['sens', 'sztuki'])
         with self.assertRaises(TypeError):
@@ -100,6 +100,8 @@ class Test(unittest.TestCase):
         
 if __name__=='__main__':
     unittest.main()
+    
+#1,75
     
     
     
